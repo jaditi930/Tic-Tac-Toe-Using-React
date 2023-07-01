@@ -41,6 +41,7 @@ function Game(){
   });
   return (
   <>
+  <h1 id="title">Tic Tac Toe Game</h1>
   <Board squares={currentSquares} currentMove={currentMove} onplay={onplay}/>
   <ol>{moves}</ol>
   </>
@@ -78,8 +79,9 @@ function Board({squares,currentMove,onplay}) {
   else
   message="Next turn : "+(currentMove%2===0 ?"X":"O");
   return (
+    <>
+    <div id="status">{message}</div>
     <div id="board">
-    <div>{message}</div>
     <div>
     <Square value={squares[0]} onSquareClick={()=>handleclick(0)}/>
     <Square value={squares[1]} onSquareClick={()=>handleclick(1)}/>
@@ -99,6 +101,7 @@ function Board({squares,currentMove,onplay}) {
     </div>
 
     </div>
+    </>
   );
 }
 

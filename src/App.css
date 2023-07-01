@@ -7,18 +7,26 @@
   pointer-events: none;
 }
 .square{
-  height:50px;
-  width:50px;
+  height:80px;
+  width:80px;
   border:2px solid black;
-  font-size: 40px;
+  font-size: 60px;
   text-align: center;
 }
 #board{
-min-height: 100%;
-min-width:70%;
+min-height: 70%;
+min-width:100%;
 display:flex;
 align-items: center;
 justify-content: center;
+}
+#status{
+font-size: 1.5rem;
+text-align: center;
+}
+#title{
+  text-align: center;
+  font-size: 5rem;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
