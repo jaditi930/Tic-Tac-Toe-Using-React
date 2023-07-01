@@ -13,6 +13,12 @@
   font-size: 60px;
   text-align: center;
 }
+body{
+  background-color: rgb(167 215 248);
+}
+.square:hover{
+background-color: rgb(182, 220, 247);
+}
 #board{
 min-height: 70%;
 min-width:100%;
@@ -23,10 +29,33 @@ justify-content: center;
 #status{
 font-size: 1.5rem;
 text-align: center;
+color: rgb(43, 129, 170);
+font-weight:500;
+padding-bottom: 15px;
+}
+#restart{
+  display: block;
+  margin:auto;
+  background-color:white;
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+.move{
+  font-size: 20px;
+  font-weight:500;
+
 }
 #title{
   text-align: center;
-  font-size: 5rem;
+  font-size: 3.7rem;
+  color:rgb(5, 118, 171);
+  text-decoration: underline;
+
+}
+@media (max-width:300px){
+  #title{
+    font-size: 2rem;
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -10,7 +10,6 @@ function Square({value,onSquareClick}){
 );
 }
 function Game(){
-  // const [xIsNext,setxIsNext]=useState(true);
   const [history,setHistory]=useState([Array(9).fill(null)]);
   let [currentMove,setCurrentMove]=useState(0);
   let currentSquares=history[currentMove];
@@ -19,14 +18,9 @@ function Game(){
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
   setHistory(nextHistory);
   setCurrentMove(nextHistory.length - 1);
-    // setxIsNext(!xIsNext);
   }
   function gotomove(move){
     setCurrentMove(move);
-    // if(move===0)
-    // setxIsNext(true);
-    // else
-    // setxIsNext(currentMove%2===0);
   }
   const moves=history.map((squares,move)=>{
     let desc="";
@@ -35,7 +29,7 @@ function Game(){
     else
     desc="Go to move #"+move;
     return (
-      <li key={move}><button onClick={()=>{gotomove(move)}}>{desc}</button>
+      <li key={move}><button class="move" onClick={()=>{gotomove(move)}}>{desc}</button>
       </li>
     );
   });
@@ -43,6 +37,7 @@ function Game(){
   <>
   <h1 id="title">Tic Tac Toe Game</h1>
   <Board squares={currentSquares} currentMove={currentMove} onplay={onplay}/>
+  <button id="restart" onClick={()=>{gotomove(0)}}>Restart</button>
   <ol>{moves}</ol>
   </>
   );
